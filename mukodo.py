@@ -20,7 +20,7 @@ twitter = Twython(
     access_token_secret
 )
 #Tweetelés:
-def SendTweet (message):
+def SendTweet ():
     twitter.update_status(status=message)
     print("Tweeted: {}".format(message))
 #UltrhangSzenzorfüggetlen távolságmérés:
@@ -60,7 +60,7 @@ def Getdistance (PIN_TRIGGER, PIN_ECHO):
     return distance
 
 #Tweet minden 10. percben:
-schedule.every(10).minutes.do(SendTweet(message))
+schedule.every(10).minutes.do(SendTweet)
 
 #-----------------------------------------------------------------------------
 #Itt kezdődik a program
