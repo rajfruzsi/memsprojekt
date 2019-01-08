@@ -78,8 +78,8 @@ def Getdistance (PIN_TRIGGER, PIN_ECHO):
     return distance
 
 #Tweet minden percben:
-schedule.every(30).minutes.do(SendTweet)
-schedule.every(30).minutes.do(SendEmail)
+schedule.every(0.1).minutes.do(SendTweet)
+schedule.every(0.1).minutes.do(SendEmail)
 
 #-----------------------------------------------------------------------------
 #Itt kezdődik a program
