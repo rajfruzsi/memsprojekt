@@ -31,9 +31,9 @@ def SendEmail():
     smtp_server = "smtp.gmail.com"
     sender_email = "memsprojekt@gmail.com"  
     receiver_email = "memsprojekt@gmail.com" 
-    password = "Memspi123"
+    password = input("Adja meg a jelszavat, es nyomjon entert: ")
     messageout= """\
-    Subject: Parkint lot space
+    Subject: Parking lot space
 
     The number of cars in the parking lot is """+str(parking)
     context = ssl.create_default_context()
@@ -54,7 +54,7 @@ def Getdistance (PIN_TRIGGER, PIN_ECHO):
 
             print ("Waiting for sensor to settle")
 
-            time.sleep(2)
+            time.sleep(1.5)
 
             print ("Calculating distance")
 
@@ -78,8 +78,8 @@ def Getdistance (PIN_TRIGGER, PIN_ECHO):
     return distance
 
 #Tweet minden percben:
-schedule.every(0.1).minutes.do(SendTweet)
-schedule.every(0.1).minutes.do(SendEmail)
+schedule.every(30).minutes.do(SendTweet)
+schedule.every(30).minutes.do(SendEmail)
 
 #-----------------------------------------------------------------------------
 #Itt kezdődik a program
